@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Gunting Batu Kertas Simple</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        document.write("<h3>HASIL PERTANDINGAN GUNTING BATU KERTAS</h3>")
+        for(let i = 1; true; i++) 
+        {
+        let user = prompt(`Masukkan Nilai`)
+        let komputer = Math.random()
+        let nilaiu;
+        let nilaik;
+        let nilaiu2;
+        let nilaik2;
+        let pkomputer;
+        let hasil;
+        if(user == "gunting"){
+            userh = "Gunting"
+            nilaiu = 2
+            nilaiu2 = 1
+        }
+        else if(user == "batu"){
+            userh = "Batu"
+            nilaiu = 3
+        }
+        else if(user == "kertas"){
+            userh = "Kertas"
+            nilaiu = 4
+            nilaiu2 = 0
+        }
+        else {
+            alert(`ERROR! ; Ketik "gunting" atau "batu" atau "kertas"`)
+        }
+
+        if(komputer < 0.33){
+            alert(`Kamu memilih ${userh}, Komputer memilih Gunting`);
+            pkomputer = "Gunting"
+            nilaik = 2
+            nilaik2 = 1
+        } 
+        else if(komputer < 0.66){
+            alert(`Kamu memilih ${userh}, Komputer memilih Batu`);
+            pkomputer = "Batu"
+            nilaik = 3
+        } 
+        else if(komputer < 1){
+            alert(`Kamu memilih ${userh}, Komputer memilih Kertas`);
+            pkomputer = "Kertas"
+            nilaik = 4
+            nilaik2 = 0
+        }
+        else{
+        }
+
+        if (nilaiu2 > nilaik2){
+            alert(`Kamu (${userh}) melawan Komputer (${pkomputer}), Kamu Menang`);
+            hasil = "Menang"
+        }
+        else if (nilaiu2 < nilaik2){
+            alert(`Kamu (${userh}) melawan Komputer (${pkomputer}), Kamu Kalah`);
+            hasil = "Kalah"
+        }
+        else if (nilaiu > nilaik){
+            alert(`Kamu (${userh}) melawan Komputer (${pkomputer}), Kamu Menang`);
+            hasil = "Menang"
+        }
+        else if (nilaiu < nilaik){
+            alert(`Kamu (${userh}) melawan Komputer (${pkomputer}), Kamu Kalah`);
+            hasil = "Kalah"
+        }
+        else if (nilaiu == nilaik){
+            alert(`Kamu (${userh}) melawan Komputer (${pkomputer}), Seri`);
+            hasil = "Imbang / Seri"
+        }
+        else{
+            alert(`ERROR! ; Ketik "gunting" atau "batu" atau "kertas"`)
+            hasil = "Input Tidak Sesuai"
+        }
+        document.writeln(`${i}. ${userh} (Kamu) Melawan ${pkomputer} (Komputer) Hasil = "${hasil}"<br>`)
+        let ulang = confirm(`Apakah anda ingin mengulang?`)
+            if(!ulang){
+                break;
+            }
+        }
+    </script>
+</html>
